@@ -1,0 +1,21 @@
+{
+	"name": "mklic",
+	"version": "0.0.0",
+	"description": "`LICENSE` file generator.",
+	"main": "index.js",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sydist/mklic.git"
+	},
+	"keywords": [
+		"license",
+		"generator"
+	],
+	"author": "sydist",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/sydist/mklic/issues"
+	},
+	"homepage": "https://github.com/sydist/mklic#readme"
+}
