@@ -1,8 +1,9 @@
 {
 	"name": "mklic",
 	"version": "0.0.0",
-	"description": "`LICENSE` file generator.",
+	"description": "Node.js LICENSE file generator.",
 	"main": "index.js",
+	"type": "module",
 	"scripts": {},
 	"repository": {
 		"type": "git",
