@@ -1,9 +1,10 @@
 <!-- Variables -->
 [Node.js]: https://nodejs.org/en/
+[example]: https://media.discordapp.net/attachments/815217091254681610/1038456169729105950/out.gif
 
 <!-- Main -->
 # mklic (make license)
-A very simple script for generating LICENSE files.
+CLI for generating LICENSE files.
 
 
 ## Getting Started
@@ -19,12 +20,6 @@ npm install --global mklic
 
 
 ### How To Run
-To run *mklic*,just run the following command, replacing `<license>` with the name of the license you want to use (example: *MIT*, *GPL-3.0*):
+![example]
 
-```
-mklic <license>
-```
-
-If the name you input returns multiple licenses, you will be asked to select one manually.
-
-You will then be asked to fill in the information your license needs.
+You can also pass in a name and an output path using the `-n` and `-o` flags respectively.
