@@ -1,0 +1,3 @@
+[submodule "yaml-licenses"]
+	path = yaml-licenses
+	url = https://github.com/sydist/yaml-licenses
