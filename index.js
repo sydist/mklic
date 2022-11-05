@@ -1,10 +1,13 @@
 #!/usr/bin/env node
-
 import { readdirSync, readFileSync, writeFileSync } from "fs";
 import { load } from "js-yaml";
 import yargs from "yargs/yargs";
 import prompts from "prompts";
+import { resolve, dirname } from "path"
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename);
 
 // Set up command-line arguments
 const args = yargs(process.argv.slice(2))
@@ -18,12 +21,10 @@ const args = yargs(process.argv.slice(2))
 	.strict()
 	.argv
 
-
 // Filter licenses
 let licenses = [];
-
-const FOLDER = "yaml-licenses/src";
-const FILES = readdirSync(FOLDER);
+const FOLDER = resolve(__dirname, "./yaml-licenses/src/");
+const FILES = readdirSync(FOLDER, "utf-8");
 FILES.forEach(FILE =>
 {
 	const yaml = readFileSync(`${FOLDER}/${FILE}`, "utf-8");
