@@ -72,7 +72,7 @@ if (licenses.length > 1)
 	if (Object.entries(response).length === 0)
 		process.exit(1);
 
-	selected = response.value
+	selected = response.value;
 }
 
 

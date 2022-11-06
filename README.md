@@ -8,18 +8,21 @@ CLI for generating LICENSE files.
 
 
 ## Getting Started
-<ins>NOTE: You need *[Node.js]* to install and run mklic</ins>
+*NOTE: You need *[Node.js]* to install and run mklic*
 
+<br>
 
 ### How To Install
+---
 You can install *mklic* by running the following command:
 
 ```
 npm install --global mklic
 ```
-
+<br>
 
 ### How To Run
+---
 ![example]
 
 You can also pass in a name and an output path using the `-n` and `-o` flags respectively.

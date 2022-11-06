@@ -7,9 +7,7 @@
 		"mklic": "index.js"
 	},
 	"type": "module",
-	"scripts": {
-		"test": "node index.js"
-	},
+	"scripts": {},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/sydist/mklic.git"
