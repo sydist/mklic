@@ -1,13 +1,15 @@
 {
 	"name": "mklic",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "CLI for generating LICENSE files.",
 	"main": "index.js",
 	"bin": {
 		"mklic": "index.js"
 	},
 	"type": "module",
-	"scripts": {},
+	"scripts": {
+		"test": "node index.js"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/sydist/mklic.git"
