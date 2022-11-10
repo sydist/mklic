@@ -5,12 +5,18 @@
 		"commander": "^9.4.1",
 		"inquirer": "^9.1.4",
 		"ora": "^6.1.2",
-		"wordwrap": "^1.0.0"
+		"word-wrap": "^1.2.3"
 	},
 	"description": "CLI tool for generating LICENSE files.",
 	"engines": {
 		"node": ">=18.0.0"
 	},
+	"files": [
+		"!src/",
+		"!.gitignore",
+		"!.npmrc",
+		"!CHANGELOG.md"
+	],
 	"keywords": [
 		"automation",
 		"cli",
@@ -22,10 +28,15 @@
 		"tool"
 	],
 	"license": "MIT",
-	"main": "index.js",
+	"main": "dist/index.js",
 	"name": "mklic",
 	"repository": "sydist/mklic",
-	"scripts": {},
+	"scripts": {
+		"build": "npx esbuild src/index.js --outfile=dist/index.js --minify-whitespace --minify-identifiers"
+	},
 	"type": "module",
-	"version": "2.0.0"
+	"version": "2.0.0",
+	"devDependencies": {
+		"esbuild": "^0.15.13"
+	}
 }
