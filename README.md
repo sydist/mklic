@@ -1,6 +1,6 @@
 <!-- Variables -->
 [Node.js]: https://nodejs.org/en/
-[example]: https://media.discordapp.net/attachments/815217091254681610/1038456169729105950/out.gif
+[example]: ./usage.gif
 
 <!-- Main -->
 # mklic (make license)
@@ -25,4 +25,8 @@ npm install --global mklic
 ---
 ![example]
 
-You can also pass in a name and an output path using the `-n` and `-o` flags respectively.
+*NOTE: The first time you use mklic, it will need an internet connection to fetch the licenses, for subsequent uses it will use the cached version, to delete the cache use the `-r` flag.*
+
+*NOTE: deprecated and non-osi-approved licenses are hidden by default, use the `-d` and `-o` flags to show them.*
+
+You can also pass in a name and an output path using the `-q` and `-p` flags respectively.

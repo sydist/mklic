@@ -15,7 +15,8 @@
 		"!src/",
 		"!.gitignore",
 		"!.npmrc",
-		"!CHANGELOG.md"
+		"!CHANGELOG.md",
+		"!usage.gif"
 	],
 	"keywords": [
 		"automation",
