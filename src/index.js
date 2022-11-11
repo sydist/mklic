@@ -51,11 +51,13 @@ import { readFileSync, writeFileSync } from "fs";
 if (CACHE_EXISTS) licenses = JSON.parse( readFileSync(CACHE_PATH) );
 else 
 {
-    const spinner = ora({ color: "cyan" }).start("LOADING LICENSES...");
+    // Loading ...
+    const spinner = ora({ color: "cyan" }).start("LOADING LICENSES ...");
+
+
     // Request a list of all SPDX licenses.
     const response = await axios.get("https://spdx.org/licenses/licenses.json");
-    const spdxLicenses = response.data;
-    licenses = spdxLicenses.licenses;
+    licenses = response.data.licenses;
 
 
     // Get each license's text, and simplify object.
@@ -95,7 +97,7 @@ else
 
 // Filter licenses depending on provided arguments.
 if (OPTIONS.query)
-    licenses = licenses.filter(license => license.name.toLowerCase().match(OPTIONS.query) || license.id.toLowerCase().match(OPTIONS.query));
+    licenses = licenses.filter(license => license.name.toLowerCase().match(OPTIONS.query.toLowerCase()) || license.id.toLowerCase().match(OPTIONS.query.toLowerCase()));
 
 if (!OPTIONS.deprecated)
     licenses = licenses.filter(license => !license.deprecated);
