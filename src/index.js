@@ -56,24 +56,30 @@ else
 
 
     // Request a list of all SPDX licenses.
-    const response = await axios.get("https://spdx.org/licenses/licenses.json");
-    licenses = response.data.licenses;
+    licenses = await axios.get("https://spdx.org/licenses/licenses.json")
+        .then(response => response.data.licenses)
+        .catch(e =>
+        {
+            console.error("\nRequest failed, please try again with a more stable connection.");
+            process.exit(1);
+        });
 
 
     // Get each license's text, and simplify object.
     let texts = [];
     licenses.forEach( async license => 
     {
-        const getLicenseText = (res) => res.data.licenseText;
-        const request = axios.get(license.detailsUrl).then(getLicenseText);
+        const request = axios.get(license.detailsUrl);
         texts.push(request);
     });
 
-    texts = await Promise.all(texts).catch(e =>
-    {
-        console.error("\nRequests failed, please try again with a more stable connection.");
-        process.exit(1);
-    });
+    texts = await Promise.all(texts)
+        .then(texts => texts.map(res => res.data.licenseText))
+        .catch(e =>
+        {
+            console.error("\nRequests failed, please try again with a more stable connection.");
+            process.exit(1);
+        });
 
     licenses = licenses.map((license, index) =>
     {
@@ -140,7 +146,7 @@ if (fields.length > 0)
                 name: "value",
             });
 
-        text = text.replace(field, value);
+        text = text.replaceAll(field, value);
     }    
 }
 
